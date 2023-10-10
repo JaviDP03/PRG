@@ -1,3 +1,5 @@
+package practica13;
+
 public class Ejercicio3 {
 	public static void main(String[] args) {
 		System.out.printf("%-10s %s\n", "milk", "leche");
