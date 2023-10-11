@@ -8,7 +8,7 @@ public class Ejercicio6 {
 		 * Muestra por pantalla esos valores. Sin borrar lo anterior, vuelve a asignar en líneas por debajo dos nuevos valores y muéstralos por pantalla. */
 		
 		enum Estaciones {Otoño, Invierno, Primavera, Verano};
-		enum Continentes {África, America, Asia, Europa, Oceanía};
+		enum Continentes {África, América, Asia, Europa, Oceanía};
 		
 		Estaciones estacion1 = Estaciones.Otoño;
 		Continentes continente1 = Continentes.Europa;
