@@ -25,10 +25,10 @@ public class Ejercicio2 {
 		dia = entrada.nextInt();
 		mes = entrada.nextInt();
 		año = entrada.nextInt();
-		
+				
 		System.out.printf("Te llamas %s y naciste en %d. Estamos en %d, así que han transcurrido %d años.", nombre, año, anyoHoy, anyoHoy-año);
-		
-		entrada.close();		
+
+		entrada.close();	
 	}
 
 }

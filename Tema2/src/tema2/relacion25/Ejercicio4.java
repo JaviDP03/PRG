@@ -29,7 +29,7 @@ public class Ejercicio4 {
 		año = entrada.nextInt();
 		
 		String cumpleaños;
-		cumpleaños = (mesHoy > mes) && (diaHoy > dia) ? "HA PASADO YA" : "NO HA PASADO AÚN";
+		cumpleaños = (mesHoy > mes) || (diaHoy > dia) ? "HA PASADO YA" : "NO HA PASADO AÚN";
 		
 		System.out.printf("Te llamas %s y naciste en %d. Estamos en %d, así que han transcurrido %d años. Tu cumpleaños %s en este año %d.", 
 				nombre, año, anyoHoy, anyoHoy-año, cumpleaños, anyoHoy);
