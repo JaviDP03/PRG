@@ -7,14 +7,15 @@ import java.util.Scanner;
 public class Ejercicio4 {
 
 	public static void main(String[] args) {
-//		Amplia el ejercicio 2 para indicar al usuario si la fecha de nacimiento es de un día y mes que ya ha pasado en el año actual o no, usando el operador terciario ?.
+//		Amplia el ejercicio 2 para indicar al usuario si la fecha de nacimiento es de un día y mes que ya ha pasado en el año actual o no, 
+//		usando el operador terciario ?.
 		
 		Scanner entrada = new Scanner(System.in);
 		String nombre;
 		int dia, mes, año;
 		Date hoy = new Date();
         SimpleDateFormat formatoAño = new SimpleDateFormat("yyyy");
-        int anyoHoy = Integer.parseInt(formatoAño.format(hoy));
+        int añoHoy = Integer.parseInt(formatoAño.format(hoy));
         SimpleDateFormat formatoMes = new SimpleDateFormat("MM");
         int mesHoy = Integer.parseInt(formatoMes.format(hoy));
         SimpleDateFormat formatoDia = new SimpleDateFormat("dd");
@@ -28,11 +29,11 @@ public class Ejercicio4 {
 		mes = entrada.nextInt();
 		año = entrada.nextInt();
 		
-		String cumpleaños;
-		cumpleaños = (mesHoy > mes) || (diaHoy > dia) ? "HA PASADO YA" : "NO HA PASADO AÚN";
+		String verificarCumpleaños;
+		verificarCumpleaños = (mesHoy > mes) || (diaHoy > dia) ? "HA PASADO YA" : "NO HA PASADO AÚN";
 		
 		System.out.printf("Te llamas %s y naciste en %d. Estamos en %d, así que han transcurrido %d años. Tu cumpleaños %s en este año %d.", 
-				nombre, año, anyoHoy, anyoHoy-año, cumpleaños, anyoHoy);
+				nombre, año, añoHoy, añoHoy-año, verificarCumpleaños, añoHoy);
 		
 		entrada.close();
 	}

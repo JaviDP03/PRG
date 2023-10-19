@@ -15,7 +15,7 @@ public class Ejercicio2 {
 		int dia, mes, año;
 		Date hoy = new Date();
         SimpleDateFormat formatoAño = new SimpleDateFormat("yyyy");
-        int anyoHoy = Integer.parseInt(formatoAño.format(hoy));
+        int añoHoy = Integer.parseInt(formatoAño.format(hoy));
         
 		
 		System.out.println("Dime tu nombre:");
@@ -26,7 +26,7 @@ public class Ejercicio2 {
 		mes = entrada.nextInt();
 		año = entrada.nextInt();
 				
-		System.out.printf("Te llamas %s y naciste en %d. Estamos en %d, así que han transcurrido %d años.", nombre, año, anyoHoy, anyoHoy-año);
+		System.out.printf("Te llamas %s y naciste en %d. Estamos en %d, así que han transcurrido %d años.", nombre, año, añoHoy, añoHoy-año);
 
 		entrada.close();	
 	}

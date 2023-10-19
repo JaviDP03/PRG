@@ -15,7 +15,7 @@ public class Ejercicio3 {
 		int dia, mes, año;
 		Date hoy = new Date();
         SimpleDateFormat formatoAño = new SimpleDateFormat("yyyy");
-        int anyoHoy = Integer.parseInt(formatoAño.format(hoy));
+        int añoHoy = Integer.parseInt(formatoAño.format(hoy));
         SimpleDateFormat formatoMes = new SimpleDateFormat("MM");
         int mesHoy = Integer.parseInt(formatoMes.format(hoy));
         SimpleDateFormat formatoDia = new SimpleDateFormat("dd");
@@ -30,7 +30,7 @@ public class Ejercicio3 {
 		año = entrada.nextInt();
 		
 		System.out.printf("Te llamas %s y naciste el %02d-%02d-%d. Hoy es %02d-%02d-%d, así que han transcurrido %d días.", 
-				nombre, dia, mes, año, diaHoy, mesHoy, anyoHoy, (anyoHoy-año)*365+(mesHoy-mes)*30+(diaHoy-dia));
+				nombre, dia, mes, año, diaHoy, mesHoy, añoHoy, (añoHoy-año)*365+(mesHoy-mes)*30+(diaHoy-dia));
 		
 		entrada.close();
 	}
