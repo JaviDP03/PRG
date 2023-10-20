@@ -15,7 +15,7 @@ public class Practica22 {
 		double precio;
 		boolean enviado;
 		String entradaEnviado; // variable para introducir Si o No
-		final int IVA = 4;
+		final double IVA = 0.04;
 
 		// Introducción de datos
 		System.out.println("Introduce la descripción del producto:");
@@ -32,7 +32,7 @@ public class Practica22 {
 
 		// Cálculos
 		enviado = entradaEnviado.equalsIgnoreCase("Si");
-		entradaEnviado = (enviado = true) ? "Si" : "No";
+		entradaEnviado = enviado ? "Si" : "No";
 		double totalBruto = cantidad * precio;
 		double importeIVA = totalBruto * IVA;
 		double totalGeneral = totalBruto + importeIVA;

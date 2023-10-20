@@ -11,8 +11,8 @@ public class Practica21 {
 		// Variables
 		Scanner entrada = new Scanner(System.in);
 		int diaFecha1, mesFecha1, añoFecha1, diaFecha2, mesFecha2, añoFecha2;
-		final double añoDias = 365.25; // valor para pasar de años a días
-		final double mesDias = 30.4375; // valor para pasar de meses a días
+		final double AÑO_DIAS = 365.25; // valor para pasar de años a días
+		final double MES_DIAS = 30.4375; // valor para pasar de meses a días
 		double totalDias;
 
 		// Entrada por teclado
@@ -27,7 +27,7 @@ public class Practica21 {
 		añoFecha2 = entrada.nextInt();
 
 		// Cálculo
-		totalDias = diaFecha2 - diaFecha1 + mesDias * (mesFecha2 - mesFecha1) + añoDias * (añoFecha2 - añoFecha1);
+		totalDias = diaFecha2 - diaFecha1 + MES_DIAS * (mesFecha2 - mesFecha1) + AÑO_DIAS * (añoFecha2 - añoFecha1);
 		totalDias = (totalDias < 0) ? -totalDias : totalDias;
 		totalDias = (int) totalDias;
 		/*
