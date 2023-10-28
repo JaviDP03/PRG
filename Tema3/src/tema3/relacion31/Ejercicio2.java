@@ -14,7 +14,7 @@ public class Ejercicio2 {
 		String diaSemana;
 
 		// Inicialización
-		System.out.println("¿Que día de la semana es?:");
+		System.out.println("¿Qué día de la semana es?:");
 		diaSemana = entrada.nextLine();
 
 		// Resultado
