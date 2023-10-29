@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Ejercicio9 {
 
 	/**
-	 * Crea un programa que resuelva una ecuación de segundo grado (del tipo ax2 +
-	 * bx + c = 0).
+	 * Crea un programa que resuelva una ecuación de segundo grado (del tipo ax2 + bx + c = 0).
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables
