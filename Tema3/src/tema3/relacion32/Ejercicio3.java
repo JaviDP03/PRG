@@ -1,9 +1,8 @@
-package tema3.relacion31;
+package tema3.relacion32;
 
 import java.util.Scanner;
 
-public class Ejercicio15 {
-
+public class Ejercicio3 {
 	/**
 	 * Escribe un programa que pinte una pirámide rellena con un carácter
 	 * introducido por teclado que podrá ser una letra, un número o un símbolo como
@@ -26,7 +25,8 @@ public class Ejercicio15 {
 		direccionVertice = entrada.nextLine().charAt(0);
 
 		// Resultado
-		if (direccionVertice == 'a') {
+		switch (direccionVertice) {
+		case 'a':
 			System.out.printf("%5s\n", caracterPiramide);
 			System.out.printf("%4s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide);
 			System.out.printf("%3s%s%s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide, caracterPiramide,
@@ -36,7 +36,8 @@ public class Ejercicio15 {
 			System.out.printf("%s%s%s%s%s%s%s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide,
 					caracterPiramide, caracterPiramide, caracterPiramide, caracterPiramide, caracterPiramide,
 					caracterPiramide);
-		} else if (direccionVertice == 'b') {
+			break;
+		case 'b':
 			System.out.printf("%s%s%s%s%s%s%s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide,
 					caracterPiramide, caracterPiramide, caracterPiramide, caracterPiramide, caracterPiramide,
 					caracterPiramide);
@@ -46,7 +47,8 @@ public class Ejercicio15 {
 					caracterPiramide);
 			System.out.printf("%4s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide);
 			System.out.printf("%5s\n", caracterPiramide);
-		} else if (direccionVertice == 'c') {
+			break;
+		case 'c':
 			System.out.printf("%s\n", caracterPiramide);
 			System.out.printf("%s%s\n", caracterPiramide, caracterPiramide);
 			System.out.printf("%s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide);
@@ -57,7 +59,8 @@ public class Ejercicio15 {
 			System.out.printf("%s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide);
 			System.out.printf("%s%s\n", caracterPiramide, caracterPiramide);
 			System.out.printf("%s\n", caracterPiramide);
-		} else if (direccionVertice == 'd') {
+			break;
+		case 'd':
 			System.out.printf("%5s\n", caracterPiramide);
 			System.out.printf("%4s%s\n", caracterPiramide, caracterPiramide);
 			System.out.printf("%3s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide);
@@ -68,9 +71,12 @@ public class Ejercicio15 {
 			System.out.printf("%3s%s%s\n", caracterPiramide, caracterPiramide, caracterPiramide);
 			System.out.printf("%4s%s\n", caracterPiramide, caracterPiramide);
 			System.out.printf("%5s\n", caracterPiramide);
-		} else {
+			break;
+		default:
 			System.out.println("No es una opción válida");
+			break;
 		}
+
 		// Liberación del scanner
 		entrada.close();
 	}

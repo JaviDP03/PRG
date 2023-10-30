@@ -18,7 +18,27 @@ public class Ejercicio16 {
 		numeroIntroducido = Integer.parseInt(entrada.nextLine());
 
 		// Resultado
-		System.out.println(numeroIntroducido % 10);
+		if (numeroIntroducido % 10 == 1) {
+			System.out.println("La última cifra es uno");
+		} else if (numeroIntroducido % 10 == 2) {
+			System.out.println("La última cifra es dos");
+		} else if (numeroIntroducido % 10 == 3) {
+			System.out.println("La última cifra es tres");
+		} else if (numeroIntroducido % 10 == 4) {
+			System.out.println("La última cifra es cuatro");
+		} else if (numeroIntroducido % 10 == 5) {
+			System.out.println("La última cifra es cinco");
+		} else if (numeroIntroducido % 10 == 6) {
+			System.out.println("La última cifra es seis");
+		} else if (numeroIntroducido % 10 == 7) {
+			System.out.println("La última cifra es siete");
+		} else if (numeroIntroducido % 10 == 8) {
+			System.out.println("La última cifra es ocho");
+		} else if (numeroIntroducido % 10 == 9) {
+			System.out.println("La última cifra es nueve");
+		} else {
+			System.out.println("La última cifra es cero");
+		}
 
 		// Liberación del scanner
 		entrada.close();
