@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Ejercicio9 {
 
 	/**
-	 * Crea un programa que resuelva una ecuación de segundo grado (del tipo ax2 + bx + c = 0).
+	 * Crea un programa que resuelva una ecuación de segundo grado (del tipo ax2 +
+	 * bx + c = 0).
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables
@@ -22,17 +23,20 @@ public class Ejercicio9 {
 		System.out.println("Introduce el valor de c:");
 		valorC = Double.parseDouble(entrada.nextLine());
 
-		// Cálculo
-		operacion = Math.pow(valorB, 2) - 4 * valorA * valorC;
-
 		// Resultado
-		if (operacion < 0) {
+		if (valorA == 0) {
 			System.out.println("No tiene solución");
-		} else if (operacion == 0) {
-			System.out.printf("x = %f\n", -valorB / 2 * valorA);
 		} else {
-			System.out.printf("x = %f\n", (-valorB + Math.sqrt(operacion)) / (2 * valorA));
-			System.out.printf("x = %f\n", (-valorB - Math.sqrt(operacion)) / (2 * valorA));
+			operacion = Math.pow(valorB, 2) - 4 * valorA * valorC;
+
+			if (operacion < 0) {
+				System.out.println("No tiene solución");
+			} else if (operacion == 0) {
+				System.out.printf("x = %f\n", -valorB / 2 * valorA);
+			} else {
+				System.out.printf("x = %f\n", (-valorB + Math.sqrt(operacion)) / (2 * valorA));
+				System.out.printf("x = %f\n", (-valorB - Math.sqrt(operacion)) / (2 * valorA));
+			}
 		}
 
 		// Liberación del scanner
