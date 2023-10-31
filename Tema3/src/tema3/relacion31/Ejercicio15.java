@@ -71,6 +71,7 @@ public class Ejercicio15 {
 		} else {
 			System.out.println("No es una opción válida");
 		}
+		
 		// Liberación del scanner
 		entrada.close();
 	}
