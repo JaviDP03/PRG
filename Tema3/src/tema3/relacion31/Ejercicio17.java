@@ -18,7 +18,7 @@ public class Ejercicio17 {
 		numeroIntroducido = Integer.parseInt(entrada.nextLine());
 
 		// Resultado
-		if (numeroIntroducido / 100000 != 0) {
+		if (numeroIntroducido > 99999) {
 			System.out.println("El número tiene más de 5 cifras");
 		} else if (numeroIntroducido / 10000 != 0) {
 			System.out.println("La primera cifra es " + numeroIntroducido / 10000);
