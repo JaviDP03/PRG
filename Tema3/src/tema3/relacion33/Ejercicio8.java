@@ -27,8 +27,7 @@ public class Ejercicio8 {
 			System.out.println("Introduce un número:");
 			numeroASumar = Integer.parseInt(entrada.nextLine());
 
-			numeroInicial = numeroInicial + numeroASumar;
-
+			numeroInicial += numeroASumar;
 			contador++;
 		}
 
