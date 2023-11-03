@@ -5,15 +5,19 @@ import java.util.Scanner;
 public class Ejercicio5 {
 	/**
 	 * Pedir números al usuario y cuando el usuario meta un -1 se terminará el
-	 * programa. Al terminar, mostrará lo siguiente: – Mayor numero introducido –
-	 * Menor número introducido – Suma de todos los números – Suma de los números
-	 * positivos – Suma de los números negativos – Media de la suma de todos los
-	 * números
+	 * programa. Al terminar, mostrará lo siguiente:
+	 * – Mayor numero introducido
+	 * – Menor número introducido
+	 * – Suma de todos los números
+	 * – Suma de los números positivos
+	 * – Suma de los números negativos
+	 * – Media de la suma de todos los números
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables
 		Scanner entrada = new Scanner(System.in);
-		int numeroIntroducido, numeroMayor = 0, numeroMenor = 0, sumaTotal = 0, sumaPositivos = 0, sumaNegativos = 0, contador = 0;
+		int numeroIntroducido, numeroMayor = 0, numeroMenor = 0, contador = 0;
+		double sumaTotal = 0, sumaPositivos = 0, sumaNegativos = 0;
 
 		// Resultado
 		do {
@@ -46,6 +50,7 @@ public class Ejercicio5 {
 		System.out.println("Suma total: " + sumaTotal);
 		System.out.println("Suma de los positivos: " + sumaPositivos);
 		System.out.println("Suma de los negativos: " + sumaNegativos);
+		System.out.println("Media de la suma total: " + sumaTotal / contador);
 
 		// Liberación del scanner
 		entrada.close();
