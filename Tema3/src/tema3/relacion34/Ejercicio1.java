@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ejercicio1 {
 	/**
 	 * Leer un número y mostrar su cuadrado, repetir el proceso hasta que se
-	 * introduzca un número negativo..
+	 * introduzca un número negativo.
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables

@@ -2,10 +2,10 @@ package tema3.relacion34;
 
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class Ejercicio3 {
 	/**
-	 * Leer un número e indicar si es positivo o negativo. El proceso se repetirá
-	 * hasta que se introduzca un 0.
+	 * Leer números hasta que se introduzca un 0. Para cada uno indicar si es par o
+	 * impar.
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables
@@ -18,10 +18,10 @@ public class Ejercicio2 {
 
 		// Resultado
 		while (numeroIntroducido != 0) {
-			if (numeroIntroducido > 0) {
-				System.out.println(numeroIntroducido + " es positivo");
+			if (numeroIntroducido % 2 == 0) {
+				System.out.println(numeroIntroducido + " es par");
 			} else {
-				System.out.println(numeroIntroducido + " es negativo");
+				System.out.println(numeroIntroducido + " es impar");
 			}
 
 			System.out.println("Introduce un número:");
