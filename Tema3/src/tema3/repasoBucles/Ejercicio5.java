@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class Ejercicio5 {
 	/**
 	 * Pide un número por teclado e indica si es un número primo o no. Un número
-	 * primo es aquel solo puede dividirse entre 1 y por sí mismo. Un buen truco
-	 * para calcular la raíz cuadrada del numero e ir comprobando que si es
-	 * divisible desde ese numero hasta 1.
+	 * primo es aquel solo puede dividirse entre 1 y por sí mismo.
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables

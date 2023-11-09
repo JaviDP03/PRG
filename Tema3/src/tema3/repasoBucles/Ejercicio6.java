@@ -1,7 +1,5 @@
 package tema3.repasoBucles;
 
-import java.util.Scanner;
-
 public class Ejercicio6 {
 	/**
 	 * Del siguiente String "La lluvia en Sevilla es una maravilla" cuenta cuantas
@@ -9,14 +7,32 @@ public class Ejercicio6 {
 	 */
 	public static void main(String[] args) {
 		// Introducción de variables
-		Scanner entrada = new Scanner(System.in);
-
+		String oracion;
+		char letra;
+		int contador;
+		
 		// Inicialización
+		oracion = "La lluvia en Sevilla es una maravilla";
+		
+		contador = 0;
 
 		// Resultado
+		for (int i = 0; i < oracion.length(); i++) {
+			letra = oracion.toLowerCase().charAt(i);
+			
+			switch (letra) {
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				contador++;
+				break;
+			}
+		}
+		
+		System.out.println("La oración tiene " + contador + " vocales");
 
-		// Liberación del scanner
-		entrada.close();
 	}
 
 }
