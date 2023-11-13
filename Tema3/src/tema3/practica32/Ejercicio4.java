@@ -21,12 +21,14 @@ public class Ejercicio4 {
 		numero2 = numeroIntroducido % 10000;
 
 		// Resultado
+		System.out.println("Dígitos que coinciden");
+		
 		for (int i = 0; i < 4; i++) {
 			cifra1 = numero1 % 10;
 			cifra2 = numero2 % 10;
 
 			if (cifra1 == cifra2) {
-				System.out.println(cifra1);
+				System.out.print(cifra1 + " ");
 			}
 
 			numero1 /= 10;
