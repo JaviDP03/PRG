@@ -12,7 +12,7 @@ public class Ejercicio10 {
 		esPrimo = true;
 
 		// Resultado
-		for (int i = 1; i <= 100; i++) {
+		for (int i = 2; i <= 100; i++) {
 			for (int j = 2; j < i; j++) {
 				if (i % j == 0) {
 					esPrimo = false;
