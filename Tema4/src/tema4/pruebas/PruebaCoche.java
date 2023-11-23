@@ -7,10 +7,11 @@ public class PruebaCoche {
 		Coche c3 = new Coche(77, 20, 20);
 		
 		String info;
-		
-		c1.litrosCombustible = 18;
-		
+				
 		System.out.println(c1);
+		
+		c1.setSentido(Coche.SentidoMarcha.ATRAS);
+		System.out.println(c1.getSentido());
 		
 		System.out.printf("El objeto es: %s\n", c1);
 	}
