@@ -34,8 +34,8 @@ public class Alumno {
 	}
 
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", dni=" + dni + ", localidad=" + localidad + ", fechaNacimiento = " + dia
-				+ "/" + mes + "/" + año + "]";
+		return "Alumno [nombre=" + nombre + ", dni=" + dni + ", localidad=" + localidad + ", fechaNacimiento=" + dia
+				+ "/" + mes + "/" + año + ", horasAsistencia=" + horasAsistencia + "]";
 	}
 
 	/**
@@ -143,12 +143,12 @@ public class Alumno {
 		Date hoy = new Date();
 		SimpleDateFormat formatoDia = new SimpleDateFormat("dd");
 		int diaHoy = Integer.parseInt(formatoDia.format(hoy));
-		SimpleDateFormat formatoMes = new SimpleDateFormat("mm");
+		SimpleDateFormat formatoMes = new SimpleDateFormat("MM");
 		int mesHoy = Integer.parseInt(formatoMes.format(hoy));
 		SimpleDateFormat formatoAño = new SimpleDateFormat("yyyy");
 		int añoHoy = Integer.parseInt(formatoAño.format(hoy));
 		
-		return (mesHoy > mes) || (diaHoy > dia) ? (añoHoy - año) : (añoHoy - año - 1);
+		return (mesHoy > mes) || (diaHoy >= dia) ? (añoHoy - año) : (añoHoy - año - 1);
 	}
 
 	/**
