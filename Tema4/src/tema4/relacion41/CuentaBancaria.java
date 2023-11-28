@@ -2,7 +2,7 @@ package tema4.relacion41;
 
 public class CuentaBancaria {
 	// Propiedades de la instancia
-	private int numeroCuenta;
+	private String numeroCuenta;
 	private String titular;
 	private double saldo;
 	private String interesAnual;
@@ -14,7 +14,7 @@ public class CuentaBancaria {
 	 * @param saldo
 	 * @param interesAnual
 	 */
-	public CuentaBancaria(int numeroCuenta, String titular, double saldo, String interesAnual) {
+	public CuentaBancaria(String numeroCuenta, String titular, double saldo, String interesAnual) {
 		this.numeroCuenta = numeroCuenta;
 		this.titular = titular;
 		this.saldo = saldo;
@@ -29,14 +29,14 @@ public class CuentaBancaria {
 	/**
 	 * @return numeroCuenta
 	 */
-	public int getNumeroCuenta() {
+	public String getNumeroCuenta() {
 		return numeroCuenta;
 	}
 
 	/**
 	 * @param numeroCuenta
 	 */
-	public void setNumeroCuenta(int numeroCuenta) {
+	public void setNumeroCuenta(String numeroCuenta) {
 		this.numeroCuenta = numeroCuenta;
 	}
 
@@ -87,7 +87,11 @@ public class CuentaBancaria {
 	 * @param dineroIngreso
 	 */
 	public void ingreso (double dineroIngreso) {
-		saldo += dineroIngreso;
+		if (dineroIngreso > 0) {
+			saldo += dineroIngreso;			
+		} else {
+			System.out.println("No se puede ingresar cantidad negativa");
+		}
 	}
 	
 	/**

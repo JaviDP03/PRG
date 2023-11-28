@@ -4,7 +4,7 @@ public class Ejercicio2 {
 
 	public static void main(String[] args) {
 		CuentaBancaria unaCuenta;
-		unaCuenta = new CuentaBancaria(1, "Pepe", 556.76, "2%");
+		unaCuenta = new CuentaBancaria("ES07-1234-5678", "Pepe", 556.76, "2%");
 		
 		System.out.println(unaCuenta);
 		
