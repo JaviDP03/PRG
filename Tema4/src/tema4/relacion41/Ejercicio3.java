@@ -4,7 +4,7 @@ public class Ejercicio3 {
 
 	public static void main(String[] args) {
 		Alumno unAlumno;
-		unAlumno = new Alumno("Josete", "12345678P", "Ecija", 25, 11, 2003, 0);
+		unAlumno = new Alumno("Josete", "12345678P", "Ecija", 24, 11, 2003, 0);
 		
 		System.out.println(unAlumno);
 		

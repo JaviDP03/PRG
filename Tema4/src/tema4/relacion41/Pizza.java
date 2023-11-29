@@ -6,7 +6,7 @@ public class Pizza {
 	private String tipo;
 
 	private enum Estado {
-		pedida, servida
+		PEDIDA, SERVIDA
 	};
 
 	private Estado estado;
@@ -20,11 +20,11 @@ public class Pizza {
 	public Pizza(String tamaño, String tipo) {
 		this.tamaño = tamaño;
 		this.tipo = tipo;
-		this.estado = Estado.pedida;
+		this.estado = Estado.PEDIDA;
 	}
 
 	public String toString() {
-		return "Pizza " + tipo + " " + tamaño + ", " + estado;
+		return "Pizza " + tipo + " " + tamaño + ", " + (estado == Estado.PEDIDA ? "pedida" : "servida");
 	}
 
 	/**
@@ -32,8 +32,8 @@ public class Pizza {
 	 * servida lo informa con un mensaje
 	 */
 	public void sirve() {
-		if (estado == Estado.pedida) {
-			estado = Estado.servida;
+		if (estado == Estado.PEDIDA) {
+			estado = Estado.SERVIDA;
 		} else {
 			System.out.println("La pizza " + tipo + " " + tamaño + " ya se ha servido");
 		}
