@@ -9,7 +9,8 @@ public class Ejercicio3 {
 	// Métodos de la calse
 	public static void comprarEntradas (Zona laZona) {
 		System.out.println("Cantidad:");
-		laZona.vender();
+		int cantidad = Integer.parseInt(entrada.nextLine());
+		laZona.vender(cantidad);
 	}
 	
 	// main
@@ -42,10 +43,18 @@ public class Ejercicio3 {
 					
 					switch (opcion2) {
 					case 1:
-						
+						Ejercicio3.comprarEntradas(salaPrincipal);
 						break;
-
+					case 2:
+						Ejercicio3.comprarEntradas(talleres);
+						break;
+					case 3:
+						Ejercicio3.comprarEntradas(vip);
+						break;
+					case 0:
+						break;
 					default:
+						System.out.println("No es una opción válida");
 						break;
 					}
 				} while (opcion2 != 0);
@@ -56,6 +65,7 @@ public class Ejercicio3 {
 				System.out.println("No es una opción válida");
 				break;
 			}
+			System.out.println();
 		} while (opcion != 0);
 
 		entrada.close();
