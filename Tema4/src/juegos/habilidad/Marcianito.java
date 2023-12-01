@@ -43,8 +43,8 @@ public class Marcianito {
 	}
 	
 	// Método llamar
-	public void llamar(String unMarcianito1, String unMarcianito2) {
-		System.out.println("Marcianito número " + unMarcianito1);
+	public void llamar(Marcianito unMarcianito1, Marcianito unMarcianito2) {
+		System.out.println("Marcianito número " + unMarcianito1.getId() + " llamando a Marcianito número " + unMarcianito2.getId());
 	}
 
 	// main
@@ -58,7 +58,11 @@ public class Marcianito {
 		System.out.println("Marcianitos con vida: " + totalConVida);
 		
 		marcianito1.getPosicion();
+		marcianito1.setPosicionX(8);
+		marcianito1.setPosicionX(1);
 		marcianito2.getPosicion();
+		marcianito2.setPosicionX(2);
+		marcianito2.setPosicionY(5);
 
 	}
 
