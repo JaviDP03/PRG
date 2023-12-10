@@ -36,8 +36,29 @@ public class TarjetaSim {
 			if (numeroPin == pinSecreto) {
 				System.out.println("SIM del teléfono " + numeroTelefono + " utilizable");
 			} else {
-				System.out.println("ERROR: PIN incorrecto. Quedan ");
+				System.out.println("ERROR: PIN incorrecto. Quedan " + numeroMaximoIntentos-- + " intentos");
 			}
 		}
 	}
+
+	// Método cambiarPin
+	public void cambiarPin(int pinAntiguo, int pinNuevo) {
+		if (estaBloqueada()) {
+			System.out.println("ERROR: SIM bloqueada");
+		} else {
+			if (pinAntiguo == pinSecreto) {
+				pinSecreto = pinNuevo;
+				System.out.println("PIN actualizado");
+			} else {
+				System.out.println("ERROR: PIN incorrecto. Quedan " + numeroMaximoIntentos-- + " intentos");
+			}
+		}
+	}
+	
+	// toString
+	public String toString() {
+		return "TarjetaSim [numeroTelefono=" + numeroTelefono + ", pinSecreto=" + pinSecreto + ", numeroMaximoIntentos="
+				+ numeroMaximoIntentos + ", numeroIntentos=" + numeroIntentos + "]";
+	}
+
 }
