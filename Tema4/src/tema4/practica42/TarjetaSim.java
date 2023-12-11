@@ -7,15 +7,15 @@ public class TarjetaSim {
 	// Propiedades de la instancia
 	private int numeroTelefono;
 	private int pinSecreto;
-	private int numeroMaximoIntentos;
 	private int numeroIntentos;
+	private int numeroMaximoIntentos;
 
 	// Constructor
 	public TarjetaSim(int numeroTelefono, int pinSecreto, int numeroMaximoIntentos) {
 		this.numeroTelefono = numeroTelefono;
 		this.pinSecreto = pinSecreto;
+		this.numeroIntentos = numeroMaximoIntentos;
 		this.numeroMaximoIntentos = numeroMaximoIntentos;
-		numeroIntentos = 0;
 	}
 
 	// Getter
@@ -25,7 +25,7 @@ public class TarjetaSim {
 
 	// Método estaBloqueada
 	public boolean estaBloqueada() {
-		return numeroIntentos == numeroMaximoIntentos;
+		return numeroIntentos == 0;
 	}
 
 	// Método introducirPin
@@ -35,8 +35,9 @@ public class TarjetaSim {
 		} else {
 			if (numeroPin == pinSecreto) {
 				System.out.println("SIM del teléfono " + numeroTelefono + " utilizable");
+				numeroIntentos = numeroMaximoIntentos;
 			} else {
-				System.out.println("ERROR: PIN incorrecto. Quedan " + numeroMaximoIntentos-- + " intentos");
+				System.out.println("ERROR: PIN incorrecto. Quedan " + numeroIntentos-- + " intentos");
 			}
 		}
 	}
@@ -49,8 +50,9 @@ public class TarjetaSim {
 			if (pinAntiguo == pinSecreto) {
 				pinSecreto = pinNuevo;
 				System.out.println("PIN actualizado");
+				numeroIntentos = numeroMaximoIntentos;
 			} else {
-				System.out.println("ERROR: PIN incorrecto. Quedan " + numeroMaximoIntentos-- + " intentos");
+				System.out.println("ERROR: PIN incorrecto. Quedan " + numeroIntentos-- + " intentos");
 			}
 		}
 	}
@@ -58,7 +60,7 @@ public class TarjetaSim {
 	// toString
 	public String toString() {
 		return "TarjetaSim [numeroTelefono=" + numeroTelefono + ", pinSecreto=" + pinSecreto + ", numeroMaximoIntentos="
-				+ numeroMaximoIntentos + ", numeroIntentos=" + numeroIntentos + "]";
+				+ numeroIntentos + ", numeroIntentos=" + numeroIntentos + "]";
 	}
 
 }
