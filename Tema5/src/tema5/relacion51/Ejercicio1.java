@@ -10,7 +10,7 @@ public class Ejercicio1 {
 		byte[] numerosAleatorios = new byte[5];
 
 		for (int i = 0; i < numerosAleatorios.length; i++) {
-			numerosAleatorios[i] = (byte) (Math.random() * 255 - 128);
+			numerosAleatorios[i] = (byte) (Math.random() * 256 - 128);
 		}
 
 		for (int i = numerosAleatorios.length - 1; i >= 0; i--) {
