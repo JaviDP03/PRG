@@ -75,7 +75,7 @@ public class Trineo {
 	 * @return
 	 */
 	public String getRegalo(int indice) {
-		if (indice >= listaRegalos.length) {
+		if (indice < 0 || indice >= listaRegalos.length) {
 			return "No existe";
 		} else {
 			return listaRegalos[indice];
@@ -89,7 +89,7 @@ public class Trineo {
 	 * @param indice
 	 */
 	public void quitarRegalo(int indice) {
-		if (indice >= cantidadAlmacenada) {
+		if (indice < 0 || indice >= cantidadAlmacenada) {
 			;
 		} else {
 			listaRegalos[indice] = null;
