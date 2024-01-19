@@ -42,7 +42,7 @@ public class Aplicacion {
 		System.out.println("---");
 		System.out.println("Cuestionario finalizado.");
 		System.out.printf("Has obtenido un total de %.2f puntos", puntuacionTotal);
-		
+
 		teclado.close();
 	}
 
