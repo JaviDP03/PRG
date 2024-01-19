@@ -67,6 +67,12 @@ public class Cuestionario {
 		}
 	}
 
+	/**
+	 * Permite corregir una pregunta con la respuesta del usuario
+	 * @param indice
+	 * @param respuestaUsuario
+	 * @return
+	 */
 	public double corregirPregunta(int indice, String respuestaUsuario) {
 		if (indice < 0 || indice >= listaPreguntas.length) {
 			return 0;
