@@ -7,17 +7,17 @@ public class Dni {
 	// Propiedades de la instancia
 	private int numero;
 	private char letra;
-
+	
 	// Constructores
-	public Dni() {
+	public Dni() throws Exception {
 		this(0);
 	}
 
-	public Dni(int numero) {
+	public Dni(int numero) throws Exception {
 		setNumero(numero);
 	}
 
-	public Dni(String dni) {
+	public Dni(String dni) throws Exception {
 		setDni(dni);
 	}
 
@@ -26,7 +26,10 @@ public class Dni {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(int numero) throws Exception {
+		if (numero < 0 || numero > 99999999) {
+			throw new Exception("El número está fuera de rango");
+		}
 		this.numero = numero;
 		letra = calcularLetra(numero);
 	}
@@ -35,7 +38,15 @@ public class Dni {
 		return String.format("%d%s", numero, letra);
 	}
 
-	public void setDni(String dni) {
+	public void setDni(String dni) throws Exception {
+		if (dni == null || dni.length() != 9) {
+			throw new Exception("El DNI no tiene el formato adecuado");
+		}
+		
+		if (calcularLetra(extraerNumero(dni)) != extraerLetra(dni)) {
+			throw new Exception("La letra del DNI no corresponde a esa combinación de números");
+		}
+		
 		numero = extraerNumero(dni);
 		letra = extraerLetra(dni);
 	}
