@@ -127,7 +127,6 @@ public class Rectangulo {
 		int x2 = vertice2.getX();
 		int y1 = vertice1.getY();
 		int y2 = vertice2.getY();
-		int alto = vertice2.getY() - vertice1.getY() + 1;
 		char[][] tablaRectangulo = new char[10][10];
 		StringBuilder cadena = new StringBuilder();
 
