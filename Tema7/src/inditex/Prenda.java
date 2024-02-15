@@ -1,6 +1,6 @@
 package inditex;
 
-public abstract class Prenda {
+public abstract class Prenda implements Lavable {
 	private int talla;
 	private String color;
 	private String composicion;

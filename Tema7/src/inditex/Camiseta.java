@@ -1,6 +1,6 @@
 package inditex;
 
-public class Camiseta extends Prenda {
+public class Camiseta extends Prenda implements Lavable {
 	private boolean mangaLarga;
 
 	// Constructor
@@ -25,6 +25,36 @@ public class Camiseta extends Prenda {
 	// Getter
 	public boolean esMangaLarga() {
 		return mangaLarga;
+	}
+
+	@Override
+	public int getMaxTempAgua() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean getAdmiteLejia() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void aplicarProducto(String unProducto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void frotar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void enjuagar() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
