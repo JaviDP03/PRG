@@ -16,7 +16,10 @@ public class Receta {
 	// Métodos
 	public void añadirIngrediente(Ingrediente unIngrediente) {
 		for (int i = 0; i < listaIngredientes.length; i++) {
-			listaIngredientes[i] = unIngrediente;
+			if (listaIngredientes[i] == null) {
+				listaIngredientes[i] = unIngrediente;
+				break;
+			}
 		}
 	}
 
