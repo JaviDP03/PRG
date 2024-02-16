@@ -4,11 +4,10 @@ public class Perro {
 	private String codigo;
 
 	public Perro(Sexo s, String c) {
-		super(s);
+		super();
 		this.codigo = c;
 	}
 
-	@Override
 	public String getCodigo() {
 		return this.codigo;
 	}
@@ -16,7 +15,6 @@ public class Perro {
 	/**
 	 * Hace que el Perro emita sonidos.
 	 */
-	@Override
 	public void hazRuido() {
 		this.ladra();
 	}
@@ -34,7 +32,6 @@ public class Perro {
 	 *
 	 * @param comida la comida que se le ofrece al Perro
 	 */
-	@Override
 	public void come(String comida) {
 		if (comida.equals("carne")) {
 			System.out.println("Hmmmm, gracias");
@@ -49,7 +46,6 @@ public class Perro {
 	 *
 	 * @param contrincante es el animal contra el que pelear
 	 */
-	@Override
 	public void peleaCon(Animal contrincante) {
 		if (contrincante.getClass().getSimpleName().equals("Perro")) {
 			System.out.println("ven aquí que te vas a enterar");
