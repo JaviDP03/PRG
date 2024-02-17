@@ -1,7 +1,9 @@
 package tema6.practica2.cocina;
 
 import tema6.practica2.despensa.Ingrediente;
-
+/**
+ * Clase recera que contiene información acerca de un conjunto de ingredientes.
+ */
 public class Receta {
 	// Propiedades de la instancia
 	private String nombre;
@@ -13,7 +15,10 @@ public class Receta {
 		listaIngredientes = new Ingrediente[capacidadMaxima];
 	}
 
-	// Métodos
+	/**
+	 * Método que añade un ingrediente a la lista a través de un parámetro.
+	 * @param unIngrediente
+	 */
 	public void añadirIngrediente(Ingrediente unIngrediente) {
 		for (int i = 0; i < listaIngredientes.length; i++) {
 			if (listaIngredientes[i] == null) {

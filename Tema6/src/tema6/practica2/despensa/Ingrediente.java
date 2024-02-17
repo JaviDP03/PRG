@@ -1,7 +1,9 @@
 package tema6.practica2.despensa;
 
 import tema6.practica2.utilidades.Generador;
-
+/**
+ * Clase Ingrediente que contiene información acerca de distintos ingredientes.
+ */
 public class Ingrediente {
 	// Propiedades de la instancia
 	private String codigo;
@@ -69,7 +71,11 @@ public class Ingrediente {
 		return String.format("%s - %s (%d)", codigo, nombre, peso);
 	}
 
-	// Métodos
+	/**
+	 * Método que normaliza un string, haciendo la primera letra mayúscula y el resto minúscula.
+	 * @param cadenaANormalizar
+	 * @return
+	 */
 	private static String normalizar(String cadenaANormalizar) {
 		return cadenaANormalizar.substring(0, 1).toUpperCase() + cadenaANormalizar.substring(1);
 	}
