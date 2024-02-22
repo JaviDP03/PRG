@@ -27,11 +27,10 @@ public class Ejercicio7 {
 		// Escribir en el fichero
 		String datos = "Este es el ejercicio 7 de la relación 8.1";
 		try {
-			// Crear un FileReader usando codificación por defecto
 			FileWriter salida = new FileWriter(new File("/home/usuario/ejemplo.txt"));
-			// Escribir en el fichero
+			
 			salida.write(datos);
-			// Cerrar el flujo
+			
 			salida.close();
 		} catch (Exception e) {
 			e.getStackTrace();
