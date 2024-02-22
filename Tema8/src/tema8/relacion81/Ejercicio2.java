@@ -19,7 +19,7 @@ public class Ejercicio2 {
 				char letra;
 				for (int i = 0; i < linea.length(); i++) {
 					letra = linea.charAt(i);
-					
+
 					if (letra == 'a') {
 						nuevaLinea.append('o');
 					} else if (letra == 'o') {
