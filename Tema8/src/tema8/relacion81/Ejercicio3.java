@@ -25,7 +25,9 @@ public class Ejercicio3 {
 				while (linea != null) {
 					linea = bf.readLine();
 					if (linea != null) {
+						// cambia ; por nada
 						linea = linea.replace(";", "");
+						// poner en mayúsculas
 						linea = linea.replace("import", "IMPORT");
 						linea = linea.replace("public", "PUBLIC");
 						linea = linea.replace("class", "CLASS");
