@@ -1,4 +1,4 @@
-package inditex;
+package tema7.practica71;
 
 public class Camiseta extends Prenda implements Lavable, Planchable {
 	private boolean mangaLarga;
@@ -30,13 +30,13 @@ public class Camiseta extends Prenda implements Lavable, Planchable {
 	@Override
 	public int getMaxTempAgua() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 70;
 	}
 
 	@Override
 	public boolean getAdmiteLejia() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override

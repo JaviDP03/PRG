@@ -1,6 +1,6 @@
 package inditex;
 
-public class Pantalon extends Prenda implements Lavable {
+public class Pantalon extends Prenda implements Lavable, Planchable {
 	private boolean piernaLarga;
 
 	// Constructor
@@ -55,6 +55,26 @@ public class Pantalon extends Prenda implements Lavable {
 	public void enjuagar() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getMaxTempPlancha() {
+		return 180;
+	}
+
+	@Override
+	public boolean getRequiereApresto() {
+		return false;
+	}
+
+	@Override
+	public void rociar(String unProducto) {
+		System.out.println("Se ha rociado " + unProducto + " en el pantalón.");
+	}
+
+	@Override
+	public void quitarArrugas() {
+		System.out.println("Se ha pasado la plancha y quitado arrugas del pantalón.");
 	}
 
 }

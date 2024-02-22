@@ -1,36 +1,36 @@
-package inditex;
+package tema7.practica71;
 
-public class Camiseta extends Prenda implements Lavable, Planchable {
-	private boolean mangaLarga;
+public class Pantalon extends Prenda implements Lavable, Planchable {
+	private boolean piernaLarga;
 
 	// Constructor
-	public Camiseta(int talla, String color, String composicion, int codigo, double precio, boolean mangaLarga) {
+	public Pantalon(int talla, String color, String composicion, int codigo, double precio, boolean piernaLarga) {
 		super(talla, color, composicion, codigo, precio);
-		this.mangaLarga = mangaLarga;
+		this.piernaLarga = piernaLarga;
 	}
 
 	@Override
 	public void doblar() {
 		// super.doblar();
-		System.out.println("Doblando camiseta con el método Seldom Cooper");
+		System.out.println("Doblando pantalón con el método Seldom Cooper");
 	}
 
 	@Override
 	public String toString() {
-		return "Camiseta [mangaLarga=" + mangaLarga + ", getTalla()=" + getTalla() + ", getColor()=" + getColor()
+		return "Camiseta [piernaLarga=" + piernaLarga + ", getTalla()=" + getTalla() + ", getColor()=" + getColor()
 				+ ", getComposicion()=" + getComposicion() + ", getCodigo()=" + getCodigo() + ", getPrecio()="
 				+ getPrecio() + "]";
 	}
 
 	// Getter
-	public boolean esMangaLarga() {
-		return mangaLarga;
+	public boolean esPiernaLarga() {
+		return piernaLarga;
 	}
 
 	@Override
 	public int getMaxTempAgua() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 60;
 	}
 
 	@Override
@@ -59,22 +59,22 @@ public class Camiseta extends Prenda implements Lavable, Planchable {
 
 	@Override
 	public int getMaxTempPlancha() {
-		return 120;
+		return 180;
 	}
 
 	@Override
 	public boolean getRequiereApresto() {
-		return true;
+		return false;
 	}
 
 	@Override
 	public void rociar(String unProducto) {
-		System.out.println("Se ha rociado " + unProducto + " en la camiseta.");
+		System.out.println("Se ha rociado " + unProducto + " en el pantalón.");
 	}
 
 	@Override
 	public void quitarArrugas() {
-		System.out.println("La plancha ha pasado todas las arrugas de la camiseta.");
+		System.out.println("Se ha pasado la plancha y quitado arrugas del pantalón.");
 	}
 
 }
