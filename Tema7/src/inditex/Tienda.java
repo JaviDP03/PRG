@@ -17,7 +17,6 @@ public class Tienda {
 		listaLavables[0] = new Camiseta(42, "Roja", "100% Algodón", 2, 21.50, false);
 		listaLavables[1] = new Pantalon(42, "Gris", "100% Algodón", 3, 22.50, false);
 		listaLavables[2] = new Gorra(42, "Negro", "100% Algodón", 4, 23.50, 6, "I LOVE NY");
-		// listaLavables[3] = new Toalla(...);
 
 		for (Lavable lavable : listaLavables) {
 			System.out.println();
