@@ -21,7 +21,7 @@ public class EjemploSerializacion {
 			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("salida.bin"));
 
 			salida.writeObject(listaPrendas);
-			salida.write(5);
+			salida.writeInt(5);
 			salida.writeObject("Hola");
 
 			salida.close();
