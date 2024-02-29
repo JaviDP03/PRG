@@ -1,6 +1,6 @@
 package mascotas;
 
-public class Perro {
+public class Perro extends Animal implements Mascota {
 	private String codigo;
 
 	public Perro(Sexo s, String c) {
