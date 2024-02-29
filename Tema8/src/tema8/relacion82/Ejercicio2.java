@@ -29,7 +29,7 @@ public class Ejercicio2 {
 			entrada2.close();
 			salida.close();
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 	}
 
