@@ -29,10 +29,10 @@ public class Ejercicio3 {
 				if (Integer.parseInt(lineaSeparada[2]) > temperaturaAlta) {
 					temperaturaAlta = Integer.parseInt(lineaSeparada[2]);
 					mesCaluroso = lineaSeparada[0];
-				} 
+				}
 				
 				linea = entrada.readLine();
-			} 
+			}
 			
 			System.out.println("El mes más caluroso es: " + mesCaluroso + " (máxima = " + temperaturaAlta + ")");
 			System.out.println("El mes más frío es: " + mesFrio + " (mínima = " + temperaturaBaja + ")");
