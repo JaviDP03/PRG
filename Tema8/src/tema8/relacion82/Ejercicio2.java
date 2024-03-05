@@ -17,8 +17,8 @@ public class Ejercicio2 {
 
 			linea1 = entrada1.readLine();
 			linea2 = entrada2.readLine();
+			
 			while (linea1 != null && linea2 != null) {
-
 				salida.write(linea1 + ": " + linea2 + "\n");
 
 				linea1 = entrada1.readLine();
