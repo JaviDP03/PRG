@@ -13,7 +13,7 @@ public class Ejercicio5 {
 		listaAlumnos[2] = new Alumno("Paco", "Díaz López", LocalDate.of(1993, 03, 13));
 
 		try {
-			BufferedWriter salida = new BufferedWriter(new FileWriter("/home/usuario/salida.txt"));
+			BufferedWriter salida = new BufferedWriter(new FileWriter("/home/usuario/salida.csv"));
 
 			for (int i = 0; i < listaAlumnos.length; i++) {
 				salida.write(listaAlumnos[i].getNombre() + "," + listaAlumnos[i].getApellidos() + ","

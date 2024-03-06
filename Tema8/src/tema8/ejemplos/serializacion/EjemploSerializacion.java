@@ -18,7 +18,7 @@ public class EjemploSerializacion {
 		listaPrendas[3] = new Pantalon(42, "Azul", "100% Algodón", 3, 22.50, false);
 
 		try {
-			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("salida.bin"));
+			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("/home/usuario/salida.bin"));
 
 			salida.writeObject(listaPrendas);
 			salida.writeInt(5);
@@ -26,7 +26,7 @@ public class EjemploSerializacion {
 
 			salida.close();
 
-			ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("salida.bin"));
+			ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("/home/usuario/salida.bin"));
 
 			listaPrendas = (Prenda[]) entrada.readObject();
 			System.out.println(entrada.readInt());
