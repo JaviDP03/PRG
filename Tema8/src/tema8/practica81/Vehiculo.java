@@ -1,6 +1,15 @@
 package tema8.practica81;
 
-public class Vehiculo {
+import java.io.Serializable;
+
+/**
+ * Clase Vehiculo que implementa la interfaz Serializable.
+ */
+public class Vehiculo implements Serializable {
+	// Propiedades de clase
+	private static int numeroVehiculos;
+	private static final long serialVersionUID = 1L;
+
 	// Propiedades de la instancia
 	private String marca;
 	private String modelo;
@@ -13,6 +22,7 @@ public class Vehiculo {
 		this.modelo = modelo;
 		this.peso = peso;
 		this.potenciaCaballos = potenciaCaballos;
+		numeroVehiculos++;
 	}
 
 	// Getters y Setters
@@ -48,10 +58,14 @@ public class Vehiculo {
 		this.potenciaCaballos = potenciaCaballos;
 	}
 
+	public static int getNumeroVehiculos() {
+		return numeroVehiculos;
+	}
+
 	// toString
 	public String toString() {
 		return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", peso=" + peso + ", potenciaCaballos="
 				+ potenciaCaballos + "]";
 	}
-	
+
 }
