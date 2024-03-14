@@ -35,7 +35,7 @@ public class Carta {
 
 	// toString
 	public String toString() {
-		return "Carta [tipo=" + tipo + ", numeracion=" + numeracion + "]";
+		return numeracion + " - " + tipo;
 	}
 
 }
