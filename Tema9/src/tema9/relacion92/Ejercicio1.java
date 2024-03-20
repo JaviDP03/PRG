@@ -1,5 +1,6 @@
 package tema9.relacion92;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,7 +11,8 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 		Map<String, Float> listaProductos = new HashMap<>();
 		Map<String, Integer> listaComprados = new HashMap<>();
-		String producto = null;
+		String producto = "";
+		int cantidad = 0;
 
 		listaProductos.put("avena", 2.21f);
 		listaProductos.put("garbanzos", 2.39f);
@@ -24,15 +26,27 @@ public class Ejercicio1 {
 			producto = teclado.nextLine();
 
 			if (listaProductos.containsKey(producto)) {
+				System.out.print("Cantidad: ");
+				cantidad = Integer.parseInt(teclado.nextLine());
 				if (listaComprados.containsKey(producto)) {
-					listaComprados.replace(producto, listaComprados.get(producto) + 1);
+					listaComprados.replace(producto, listaComprados.get(producto) + cantidad);
 				} else {
-					listaComprados.put(producto, 1);
+					listaComprados.put(producto, cantidad);
 				}
 			} else {
-				System.out.println("El producto no existe");
+				if (!producto.equals("fin")) {
+					System.out.println("El producto no existe");
+				}
 			}
 		}
+
+		System.out.println("Producto	Precio 		Cantidad 	 Subtotal");
+		System.out.println("----------------------------------------------------------");
+		for (String prod : listaComprados.keySet()) {
+			System.out.printf("%s%13.2f%16d%17.2f", prod, listaProductos.get(prod), listaComprados.get(prod),
+					listaProductos.get(prod) * listaComprados.get(prod));
+		}
+
 	}
 
 }
