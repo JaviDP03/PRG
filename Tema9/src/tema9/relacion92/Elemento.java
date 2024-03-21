@@ -1,5 +1,7 @@
 package tema9.relacion92;
 
+import java.util.Objects;
+
 public class Elemento {
 	// Propiedades de la instancia
 	private String nombre;
@@ -45,7 +47,25 @@ public class Elemento {
 
 	// toString
 	public String toString() {
-		return "Elemento [nombre=" + nombre + ", precio=" + precio + ", cantidad=" + cantidad + "]";
+		return String.format("%s PVP: %.2f Unidades: %d Subtotal: %.2f", nombre, precio, cantidad, getSubtotal());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cantidad, nombre, precio);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Elemento other = (Elemento) obj;
+		return cantidad == other.cantidad && Objects.equals(nombre, other.nombre)
+				&& Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio);
 	}
 
 }

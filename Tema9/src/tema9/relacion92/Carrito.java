@@ -10,13 +10,36 @@ public class Carrito {
 	// Constructor
 	public Carrito() {
 	}
-	
+
+	// toString
+	public String toString() {
+		StringBuilder carrito = new StringBuilder();
+		
+		carrito.append("Contenido del carrito\n");
+		carrito.append("=====================\n");
+		for (Elemento elemento : listaElementos) {
+			carrito.append(elemento + "\n");
+		}
+		
+		return carrito.toString();
+	}
+
 	// Métodos
 	public void agrega(Elemento elementoNuevo) {
 		listaElementos.add(elementoNuevo);
 	}
-	
+
 	public int numeroDeElementos() {
 		return listaElementos.size();
+	}
+
+	public double importeTotal() {
+		double total = 0;
+
+		for (Elemento elemento : listaElementos) {
+			total += elemento.getSubtotal();
+		}
+
+		return total;
 	}
 }

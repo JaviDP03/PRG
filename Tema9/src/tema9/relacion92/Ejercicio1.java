@@ -1,6 +1,5 @@
 package tema9.relacion92;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
