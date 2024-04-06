@@ -23,15 +23,10 @@ public class Repositorio {
 	public void leerFichero() {
 		try {
 			ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(fichero));
-
-			while (entrada != null) {
-				listaProductos.add((Producto) entrada.readObject());
-			}
-
-			entrada.close();
+			listaProductos = (List<Producto>) entrada.readObject();
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 			listaProductos.add(new Producto(1, "Huevo", 1.22));
 			listaProductos.add(new Producto(2, "Harina", 2.50));
 			listaProductos.add(new Producto(3, "Macarrones", 2.29));
@@ -48,9 +43,7 @@ public class Repositorio {
 	public void grabarFichero() throws FileNotFoundException, IOException {
 		ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(fichero));
 
-		for (Producto producto : listaProductos) {
-			salida.writeObject(producto);
-		}
+		salida.writeObject(listaProductos);
 
 		salida.close();
 	}
@@ -63,8 +56,21 @@ public class Repositorio {
 		listaProductos.remove(unProducto);
 	}
 
-	public void borrarPorId(String id) {
+	public void borrarPorId(int id) {
+		listaProductos.remove(buscarPorId(id));
+	}
 
+	public int borrarPorNombre(String nombre) {
+		List<Producto> listaBorrados = new ArrayList<>();
+		int contadorBorrados = 0;
+
+		listaBorrados = buscarPorNombre(nombre);
+		for (Producto producto : listaBorrados) {
+			listaProductos.remove(producto);
+			contadorBorrados++;
+		}
+
+		return contadorBorrados;
 	}
 
 	public Producto buscarPorId(int id) {
@@ -77,14 +83,15 @@ public class Repositorio {
 		return null;
 	}
 
-	public Producto buscarPorNombre(String nombre) {
+	public List<Producto> buscarPorNombre(String nombre) {
+		List<Producto> listaBuscados = new ArrayList<>();
 		for (Producto producto : listaProductos) {
-			if (nombre.equals(producto.getNombre())) {
-				return producto;
+			if (producto.getNombre().toLowerCase().contains(nombre)) {
+				listaBuscados.add(producto);
 			}
 		}
 
-		return null;
+		return listaBuscados;
 	}
 
 	public List<Producto> buscarTodos() {
@@ -92,25 +99,21 @@ public class Repositorio {
 	}
 
 	public void actualizar(Producto productoActualizado) {
-		listaProductos.remove(buscarPorId(productoActualizado.getId()));
-		listaProductos.add(productoActualizado);
+		borrarPorId(productoActualizado.getId());
+		crear(productoActualizado);
 
 	}
 
 	public Producto verificarId(Producto unProducto) {
-		boolean esIgual = false;
-		while (!esIgual) {
-			for (Producto producto : listaProductos) {
-				if (unProducto.getId() == producto.getId()) {
-					esIgual = true;
-				}
-			}
-
-			if (esIgual) {
+		for (Producto producto : listaProductos) {
+			if (unProducto.getId() == producto.getId()) {
 				unProducto.setId(unProducto.getId() + 1);
+			} else {
+				break;
 			}
 		}
 
 		return unProducto;
 	}
+
 }

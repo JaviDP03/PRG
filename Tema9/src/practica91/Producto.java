@@ -1,25 +1,24 @@
 package practica91;
 
 import java.io.Serializable;
-import java.util.Comparator;
 import java.util.Objects;
 
-public class Producto implements Serializable, Comparable, Comparator {
+public class Producto implements Serializable, Comparable<Producto> {
 	// Propiedades del objeto
 	private static final long serialVersionUID = 1L;
-	
+
 	// Propiedades de la instancia
 	private int id;
 	private String nombre;
 	private double precio;
-	
+
 	// Constructor
 	public Producto(int id, String nombre, double precio) {
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
-	
+
 	// Getters y Setters
 	public int getId() {
 		return id;
@@ -44,7 +43,7 @@ public class Producto implements Serializable, Comparable, Comparator {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
+
 	// toString
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";
@@ -65,16 +64,13 @@ public class Producto implements Serializable, Comparable, Comparator {
 		if (getClass() != obj.getClass())
 			return false;
 		Producto other = (Producto) obj;
-		return Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre)
+		return id == other.id && Objects.equals(nombre, other.nombre)
 				&& Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio);
 	}
 
 	@Override
-	public int compare(Object o1, Object o2) {
+	public int compareTo(Producto o) {
 		return 0;
 	}
-	@Override
-	public int compareTo(Object o) {
-		return 0;
-	}
+
 }
