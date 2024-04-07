@@ -1,16 +1,31 @@
 package practica91;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Clase Aplicación que simula el funcionamiento principal con un menú de
+ * opciones.
+ */
 public class Aplicacion {
+	// Propiedades de clase
 	private static Scanner teclado = new Scanner(System.in);
 	private static Repositorio r1 = new Repositorio("productos.bin");
 
+	// Main
 	public static void main(String[] args) {
 		int opcion;
-		r1.leerFichero();
+
+		System.out.println("Cargando productos del fichero...");
+		if (r1.leerFichero()) {
+			System.out.println(r1.buscarTodos().size() + " productos cargados con éxito\n");
+		} else {
+			System.out.println("Error: No se ha podido leer el fichero");
+			System.out.println("Cargando productos autogenerados...");
+			System.out.println(r1.buscarTodos().size() + " productos cargados con éxito\n");
+		}
 
 		do {
 			System.out.println("MENU PRINCIPAL");
@@ -61,15 +76,14 @@ public class Aplicacion {
 		} while (opcion != 0);
 
 		teclado.close();
-		System.out.println("Saliendo del programa...");
-		try {
-			r1.grabarFichero();
+		System.out.println("Saliendo del programa...\n");
+
+		if (r1.grabarFichero()) {
 			System.out.println("Fichero grabado con éxito");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} else {
+			System.out.println("Error: No se ha podido grabar el fichero");
 		}
+
 	}
 
 	// Opción 1
@@ -82,11 +96,17 @@ public class Aplicacion {
 	// Opción 2
 	public static String buscarPorId(Repositorio repo) {
 		int id;
+		Producto productoSeleccionado;
 
 		System.out.print("Elija una opción: ");
 		id = Integer.parseInt(teclado.nextLine());
+		productoSeleccionado = repo.buscarPorId(id);
 
-		return repo.buscarPorId(id).toString();
+		if (productoSeleccionado == null) {
+			return "Error: No se pudo encontrar el producto";
+		} else {
+			return productoSeleccionado.toString();
+		}
 	}
 
 	// Opción 3
@@ -143,9 +163,12 @@ public class Aplicacion {
 		System.out.print("Indique el ID: ");
 		id = Integer.parseInt(teclado.nextLine());
 
-		repo.borrarPorId(id);
+		if (repo.borrarPorId(id)) {
+			System.out.println("Producto borrado");
+		} else {
+			System.out.println("Error: No se pudo borrar el producto o no es posible encontrarlo.");
+		}
 
-		System.out.println("Producto borrado");
 	}
 
 	// Opción 7
@@ -165,9 +188,11 @@ public class Aplicacion {
 		Producto productoSeleccionado;
 		double subtotal;
 		double total = 0;
-		
+
 		carrito.append("Producto\tPrecio Cantidad Subtotal\n");
 		carrito.append("----------------------------------------\n");
+
+		System.out.println(listarProductos(repo));
 
 		System.out.print("Indique un ID: ");
 		id = Integer.parseInt(teclado.nextLine());
@@ -177,20 +202,39 @@ public class Aplicacion {
 			cantidad = Integer.parseInt(teclado.nextLine());
 
 			productoSeleccionado = repo.buscarPorId(id);
-			subtotal = cantidad * productoSeleccionado.getPrecio();
-			total += subtotal;
+			if (productoSeleccionado == null) {
+				System.out.println("Error: No se pudo encontrar el producto");
+			} else {
+				subtotal = cantidad * productoSeleccionado.getPrecio();
+				total += subtotal;
 
-			carrito.append(String.format("%s\t%.2f\t%d\t%.2f\n", productoSeleccionado.getNombre(),
-					productoSeleccionado.getPrecio(), cantidad, subtotal));
-			
+				carrito.append(String.format("%-18s%.2f%9d%9.2f\n", productoSeleccionado.getNombre(),
+						productoSeleccionado.getPrecio(), cantidad, subtotal));
+			}
+
 			System.out.print("Indique un ID: ");
 			id = Integer.parseInt(teclado.nextLine());
 		}
-		
+
 		System.out.println();
 		carrito.append("----------------------------------------\n");
-		carrito.append(String.format("TOTAL: %.2f\n", total));
-		
+		carrito.append(String.format("TOTAL: %.2f€\n", total));
+
+		System.out.print("¿Desea una copia de la factura? (s/n): ");
+		if (teclado.nextLine().equalsIgnoreCase("s")) {
+			try {
+				BufferedWriter salida = new BufferedWriter(new FileWriter("factura.txt"));
+
+				salida.write(carrito.toString());
+
+				salida.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		System.out.println();
+
 		return carrito.toString();
 	}
 

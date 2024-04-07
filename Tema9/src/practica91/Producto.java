@@ -3,6 +3,9 @@ package practica91;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Clase Producto que representa un producto para su uso en la aplicación.
+ */
 public class Producto implements Serializable, Comparable<Producto> {
 	// Propiedades del objeto
 	private static final long serialVersionUID = 1L;
@@ -12,7 +15,13 @@ public class Producto implements Serializable, Comparable<Producto> {
 	private String nombre;
 	private double precio;
 
-	// Constructor
+	/**
+	 * Constructor
+	 * 
+	 * @param id     único del producto
+	 * @param nombre del producto
+	 * @param precio del producto
+	 */
 	public Producto(int id, String nombre, double precio) {
 		this.id = id;
 		this.nombre = nombre;
