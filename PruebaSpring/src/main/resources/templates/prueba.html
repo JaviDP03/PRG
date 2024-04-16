@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba</title>
+</head>
+<body>
+	<p>Hoy es <span th:text="${hoy}"></span></p>
+	
+	<h1>Producto</h1>
+	<p><strong>Nombre:</strong> <span th:text="${producto.nombre}"></span></p>
+	<p><strong>Precio:</strong> <span th:text="${producto.precio}"></span>€</p>
+	
+	<h1>Teléfonos</h1>
+	<p><strong>Antonio:</strong> <span th:text="${telefonos[Antonio]}"></span></p>
+	
+	<h1>Colores</h1>
+	<p><strong>Primero:</strong> <span th:text="${colores[0]}"></span></p>
+	<p><strong>Segundo:</strong> <span th:text="${colores[1]}"></span></p>
+	<p><strong>Tercero:</strong> <span th:text="${colores[2]}"></span></p>
+</body>
+</html>
