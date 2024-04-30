@@ -2,16 +2,23 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title th:replace="~{base :: titulo}">Aquí iría el título</title>
+<title th:replace="~{base :: titulo}">Aquí va el título</title>
 </head>
 <body>
-	<div th:replace="~{base :: encabezado}">
-		<h1 style="text-align: center">Aquí va el encabezado</h1>
-	</div>
+	<div th:replace="~{base :: encabezado}">Aquí va el encabezado</div>
 
-	<nav th:replace="~{base :: menu}">Aquí va el menú</nav>
+	<nav th:replace="~{base :: menu}">Aquí va el menu</nav>
 
 	<h2>Panes</h2>
+
+	<!-- Aquí iría el descartable -->
+	<div id="toggle" th:if="${error}"
+		style="background-color: pink; border: 1px solid red; margin: 1em">
+		<span th:text="${mensaje}">Se ha producido un error.</span> <a
+			href="#"
+			onclick="document.getElementById('toggle').style.display = 'none';">
+			[Cerrar] </a>
+	</div>
 
 	<table style="background: black; border-spacing: 1px">
 		<thead style="background: lightgray">
@@ -33,8 +40,9 @@
 			</tr>
 		</tbody>
 	</table>
+
 	<div style="margin: 1em">
-		<a th:href="@{nuevo/item}">Nuevo</a> <a href="/">Regresar</a>
+		<a th:href="@{nuevo/item}">Nuevo</a> <a th:href="@{..}">Regresar</a>
 	</div>
 </body>
 </html>
