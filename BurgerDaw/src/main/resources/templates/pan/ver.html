@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Burger DAW</title>
+</head>
+<body>
+	<div>
+		<h1 style="text-align: center">Burger DAW</h1>
+	</div>
+
+	<nav>
+		<ul
+			style="list-style-type: none; display: flex; gap: 1em; background: lightgray">
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/hamburguesa/">Hamburguesas</a></li>
+			<li><a href="/pan/">Panes</a></li>
+			<li><a href="/ingrediente/">Ingredientes</a></li>
+		</ul>
+	</nav>
+
+	<h2>Panes / Ver</h2>
+
+	<div th:object="${pan}" style="border: 1px solid black; padding: 1em">
+		<p>
+			<span style="font-weight: bold">Id: </span> <span th:text="*{id}">1</span>
+		</p>
+		<p>
+			<span style="font-weight: bold">Descripción: </span> <span
+				th:text="*{descripcion}">Sésamo</span>
+		</p>
+		<p>
+			<span style="font-weight: bold">Gluten: </span> <span
+				th:text="*{gluten}">Sí</span>
+		</p>
+	</div>
+
+
+	<div style="margin: 1em">
+		<a th:href="@{..}">Regresar</a>
+	</div>
+</body>
+</html>
