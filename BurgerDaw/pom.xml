@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.daw</groupId>
-	<artifactId>BugerDaw</artifactId>
+	<artifactId>BurgerDaw</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BugerDaw</name>
+	<name>BurgerDaw</name>
 	<description>Aplicación web para fabricante de automóviles</description>
 	<properties>
 		<java.version>17</java.version>
