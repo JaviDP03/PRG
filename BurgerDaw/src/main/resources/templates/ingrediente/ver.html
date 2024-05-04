@@ -19,19 +19,20 @@
 		</ul>
 	</nav>
 
-	<h2>Panes / Ver</h2>
+	<h2>Ingredientes / Ver</h2>
 
-	<div th:object="${pan}" style="border: 1px solid black; padding: 1em">
+	<div th:object="${ingrediente}"
+		style="border: 1px solid black; padding: 1em">
 		<p>
 			<span style="font-weight: bold">Id: </span> <span th:text="*{id}">1</span>
 		</p>
 		<p>
 			<span style="font-weight: bold">Descripción: </span> <span
-				th:text="*{descripcion}">Sésamo</span>
+				th:text="*{nombre}">Sésamo</span>
 		</p>
 		<p>
-			<span style="font-weight: bold">Gluten: </span> <span
-				th:text="*{gluten ? 'sí' : 'no'}">Sí</span>
+			<span style="font-weight: bold">Lactosa: </span> <span
+				th:text="*{lactosa ? 'sí' : 'no'}">Sí</span>
 		</p>
 	</div>
 

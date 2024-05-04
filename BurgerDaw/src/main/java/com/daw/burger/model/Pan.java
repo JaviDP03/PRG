@@ -11,7 +11,6 @@ public class Pan {
 	}
 
 	public Pan(Long id, String descripcion, boolean gluten) {
-		super();
 		this.id = id;
 		this.descripcion = descripcion;
 		this.gluten = gluten;

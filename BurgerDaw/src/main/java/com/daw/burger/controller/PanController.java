@@ -27,7 +27,6 @@ public class PanController {
 
 	@GetMapping("/{id}")
 	public String verPan(@PathVariable(name = "id") Long id, Model modelo, RedirectAttributes redirAttrs) {
-
 		Pan item = panService.getById(id);
 
 		if (item == null) {
@@ -43,7 +42,6 @@ public class PanController {
 
 	@GetMapping("/borrar/{id}")
 	public String borrarPan(@PathVariable(name = "id") Long id, Model modelo) {
-
 		modelo.addAttribute("pan", panService.getById(id));
 
 		return "pan/borrar";
@@ -58,7 +56,6 @@ public class PanController {
 
 	@GetMapping("/editar/{id}")
 	public String editarPan(@PathVariable(name = "id") Long id, Model modelo) {
-
 		Pan item = panService.getById(id);
 
 		modelo.addAttribute("pan", item);
@@ -68,7 +65,6 @@ public class PanController {
 
 	@PostMapping("/editar/enviar")
 	public String guardarPan(@ModelAttribute("pan") Pan pan, Model modelo) {
-
 		panService.update(pan);
 
 		return "redirect:..";
@@ -76,7 +72,6 @@ public class PanController {
 
 	@GetMapping("/nuevo/item")
 	public String nuevoPan(Model modelo) {
-
 		Pan item = new Pan();
 
 		// Aquí puedo poner algunos valores por defecto al crear un nuevo pan
@@ -90,7 +85,6 @@ public class PanController {
 
 	@PostMapping("/nuevo/enviar")
 	public String guardarNuevoPan(@ModelAttribute("pan") Pan pan, Model modelo) {
-
 		panService.create(pan);
 
 		return "redirect:..";

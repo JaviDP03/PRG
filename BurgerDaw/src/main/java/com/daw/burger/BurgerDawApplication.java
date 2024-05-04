@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BugerDawApplication {
+public class BurgerDawApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BugerDawApplication.class, args);
+		SpringApplication.run(BurgerDawApplication.class, args);
 	}
 
 }
