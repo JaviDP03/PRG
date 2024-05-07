@@ -1,4 +1,4 @@
-package com.daw.burger.controller;
+package com.daw.burger.controlador;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.daw.burger.model.Ingrediente;
-import com.daw.burger.service.IngredienteService;
+import com.daw.burger.modelo.Ingrediente;
+import com.daw.burger.servicio.IngredienteServicio;
 
 @Controller
 @RequestMapping("/ingrediente")
-public class IngredienteController {
+public class IngredienteControlador {
 	@Autowired
-	private IngredienteService IngredienteService;
+	private IngredienteServicio IngredienteService;
 
 	@GetMapping("/")
 	public String listarIngredientes(Model modelo) {

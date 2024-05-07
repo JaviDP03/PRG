@@ -1,4 +1,4 @@
-package com.daw.burger.model;
+package com.daw.burger.modelo;
 
 import java.util.Objects;
 

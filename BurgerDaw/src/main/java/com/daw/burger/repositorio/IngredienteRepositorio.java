@@ -1,10 +1,10 @@
-package com.daw.burger.repository;
+package com.daw.burger.repositorio;
 
 import java.util.Collection;
 
-import com.daw.burger.model.Ingrediente;
+import com.daw.burger.modelo.Ingrediente;
 
-public interface IngredienteRepository {
+public interface IngredienteRepositorio {
 	Collection<Ingrediente> getAll();
 	Ingrediente getById(Long id);
 	void create(Ingrediente item);

@@ -1,4 +1,4 @@
-package com.daw.burger.repository;
+package com.daw.burger.repositorio;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,13 +7,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.daw.burger.model.Ingrediente;
+import com.daw.burger.modelo.Ingrediente;
 
 import jakarta.annotation.PostConstruct;
 
 @Repository
 @Qualifier("memoria")
-public class IngredienteRepositoryMemoriaImpl implements IngredienteRepository {
+public class IngredienteRepositorioMemoriaImpl implements IngredienteRepositorio {
 	private List<Ingrediente> listaIngredientes;
 
 	@PostConstruct

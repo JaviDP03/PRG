@@ -1,10 +1,20 @@
-package com.daw.burger.model;
+package com.daw.burger.modelo;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Pan {
+	@Id
 	private Long id;
+
+	@Column
 	private String descripcion;
+	
+	@Column
 	private boolean gluten;
 
 	public Pan() {
@@ -47,7 +57,7 @@ public class Pan {
 
 	@Override
 	public int hashCode() {
-		//return Objects.hash(descripcion, gluten, id);
+		// return Objects.hash(descripcion, gluten, id);
 		return Objects.hash(id);
 	}
 

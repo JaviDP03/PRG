@@ -1,4 +1,4 @@
-package com.daw.burger.service;
+package com.daw.burger.servicio;
 
 import java.util.Collection;
 
@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.daw.burger.model.Ingrediente;
-import com.daw.burger.repository.IngredienteRepository;
+import com.daw.burger.modelo.Ingrediente;
+import com.daw.burger.repositorio.IngredienteRepositorio;
 
 @Service
-public class IngredienteService {
+public class IngredienteServicio {
 	@Autowired
 	@Qualifier("memoria")
-	private IngredienteRepository IngredienteRepository;
+	private IngredienteRepositorio IngredienteRepository;
 
 	public Collection<Ingrediente> getAll() {
 		return IngredienteRepository.getAll();

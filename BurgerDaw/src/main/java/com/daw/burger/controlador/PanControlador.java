@@ -1,4 +1,4 @@
-package com.daw.burger.controller;
+package com.daw.burger.controlador;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.daw.burger.model.Pan;
-import com.daw.burger.service.PanService;
+import com.daw.burger.modelo.Pan;
+import com.daw.burger.servicio.PanServicio;
 
 @Controller
 @RequestMapping("/pan")
-public class PanController {
+public class PanControlador {
 	@Autowired
-	private PanService panService;
+	private PanServicio panService;
 
 	@GetMapping("/")
 	public String listarPanes(Model modelo) {
