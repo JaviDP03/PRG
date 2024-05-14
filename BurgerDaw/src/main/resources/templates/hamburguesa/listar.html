@@ -9,7 +9,7 @@
 
 	<nav th:replace="~{base :: menu}">Aquí va el menu</nav>
 
-	<h2>Panes</h2>
+	<h2>Hamburguesas</h2>
 
 	<!-- Aquí iría el descartable -->
 	<div id="toggle" th:if="${error}"
@@ -24,18 +24,18 @@
 		<thead style="background: lightgray">
 			<tr>
 				<th>Id</th>
-				<th>Descripción</th>
-				<th>Gluten</th>
-				<th>Hamburguesas que lo llevan</th>
+				<th>Nombre</th>
+				<th>Precio</th>
+				<th>Pan</th>
 				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody style="background: white">
-			<tr th:each="pan : ${listaPanes}" th:object="${pan}">
+			<tr th:each="hamburguesa : ${listaHamburguesas}" th:object="${hamburguesa}">
 				<td th:text="*{id}">1</td>
-				<td th:text="*{descripcion}">Clásico</td>
-				<td th:text="*{gluten ? 'Sí' : 'No'}">Sí</td>
-				<td th:text="*{nombresHamburguesas}">Lista de hamburguesas</td>
+				<td th:text="*{nombre}">Tijuana</td>
+				<td th:text="*{#numbers.formatCurrency(precio)}">3.0€</td>
+				<td th:text="*{pan.descripcion}">Chapata</td>
 				<td><a th:href="@{{id}(id=*{id})}">Ver</a>, <a
 					th:href="@{editar/{id}(id=*{id})}">Editar</a>, <a
 					th:href="@{borrar/{id}(id=*{id})}">Borrar</a></td>
