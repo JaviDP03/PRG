@@ -9,21 +9,29 @@
 
 	<nav th:replace="~{base :: menu}">Aquí va el menu</nav>
 
-	<h2>Panes / Editar</h2>
+	<h2>Hamburguesas / Editar</h2>
 
-	<form th:action="@{enviar}" th:object="${pan}" method="post"
+	<form th:action="@{enviar}" th:object="${hamburguesa}" method="post"
 		style="border: 1px solid black; padding: 1em">
 
 		<input th:field="*{id}" id="id" type="hidden" />
 
 		<p>
-			<label for="descripcion" style="font-weight: bold">Descripción:
-			</label> <input th:field="*{descripcion}" id="descripcion" type="text" />
+			<label for="nombre" style="font-weight: bold">Nombre: </label> <input
+				th:field="*{nombre}" id="nombre" type="text" />
 		</p>
 
 		<p>
-			<label for="gluten" style="font-weight: bold">Lleva gluten: </label>
-			<input th:field="*{gluten}" id="gluten" type="checkbox" />
+			<label for="precio" style="font-weight: bold">Precio: </label> <input
+				th:field="*{precio}" id="precio" type="number" min="-1" step="any" />
+		</p>
+		<p>
+			<label for="pan" style="font-weight: bold">Pan: </label> <select
+				th:field="*{pan}" id="pan">
+				<option value="-1">---</option>
+				<option th:each="p : ${listaPanes}" th:value="${p.id}"
+					th:text="${p.descripcion}">Tipo de pan</option>
+			</select>
 		</p>
 
 		<button type="submit">Aceptar</button>

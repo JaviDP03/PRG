@@ -18,7 +18,13 @@ public class HamburguesaServicio {
 	}
 
 	public Hamburguesa getById(Long id) {
-		return hamburguesaRepository.findById(id).orElse(null);
+		Hamburguesa unaHamburguesa = hamburguesaRepository.findById(id).orElse(null);
+		
+		if (unaHamburguesa == null) {
+			throw new RuntimeException("No existe la hamburguesa");
+		}
+		
+		return unaHamburguesa;
 	}
 
 	public Hamburguesa create(Hamburguesa item) {

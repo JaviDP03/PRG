@@ -13,12 +13,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.daw.burger.modelo.Hamburguesa;
 import com.daw.burger.modelo.Pan;
 import com.daw.burger.servicio.HamburguesaServicio;
+import com.daw.burger.servicio.PanServicio;
 
 @Controller
 @RequestMapping("/hamburguesa")
 public class HamburguesaControlador {
 	@Autowired
 	private HamburguesaServicio hamburguesaService;
+
+	@Autowired
+	private PanServicio panService;
 
 	@GetMapping("/")
 	public String listarHamburguesas(Model modelo) {
@@ -28,17 +32,16 @@ public class HamburguesaControlador {
 
 	@GetMapping("/{id}")
 	public String verHamburguesa(@PathVariable(name = "id") Long id, Model modelo, RedirectAttributes redirAttrs) {
-		Hamburguesa item = hamburguesaService.getById(id);
-
-		if (item == null) {
+		try {
+			Hamburguesa item = hamburguesaService.getById(id);
+			modelo.addAttribute("hamburguesa", item);
+			return "hamburguesa/ver";
+		} catch (Exception e) {
 			redirAttrs.addFlashAttribute("error", true);
 			redirAttrs.addFlashAttribute("mensaje", "No existe el elemento");
 			return "redirect:.";
 		}
 
-		modelo.addAttribute("hamburguesa", item);
-
-		return "hamburguesa/ver";
 	}
 
 	@GetMapping("/borrar/{id}")
@@ -60,14 +63,20 @@ public class HamburguesaControlador {
 		Hamburguesa item = hamburguesaService.getById(id);
 
 		modelo.addAttribute("hamburguesa", item);
+		modelo.addAttribute("listaPanes", panService.getAll());
 
 		return "hamburguesa/formulario";
 	}
 
 	@PostMapping("/editar/enviar")
-	public String guardarHamburguesa(@ModelAttribute("hamburguesa") Hamburguesa hamburguesa, Model modelo) {
-		hamburguesaService.update(hamburguesa);
-
+	public String guardarHamburguesa(@ModelAttribute("hamburguesa") Hamburguesa hamburguesa,
+			RedirectAttributes redirAttrs) {
+		try {
+			hamburguesaService.update(hamburguesa);
+		} catch (Exception e) {
+			redirAttrs.addFlashAttribute("error", true);
+			redirAttrs.addFlashAttribute("mensaje", "No se pudo enviar el formulario correctamente");
+		}
 		return "redirect:..";
 	}
 
@@ -78,8 +87,10 @@ public class HamburguesaControlador {
 		// Aquí puedo poner algunos valores por defecto al crear un nuevo pan
 		item.setNombre("Escriba aquí el nombre");
 		item.setPrecio(0);
+		item.setPan(new Pan("Indeterminado", true));
 
 		modelo.addAttribute("hamburguesa", item);
+		modelo.addAttribute("listaPanes", panService.getAll());
 
 		return "hamburguesa/formulario";
 	}

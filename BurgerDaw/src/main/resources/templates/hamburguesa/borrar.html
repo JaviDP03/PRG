@@ -9,26 +9,32 @@
 
 	<nav th:replace="~{base :: menu}">Aquí va el menu</nav>
 
-	<h2>Panes / Borrar</h2>
+	<h2>Hamburguesas / Borrar</h2>
 
-	<div th:object="${pan}" style="border: 1px solid black; padding: 1em">
+	<div th:object="${hamburguesa}"
+		style="border: 1px solid black; padding: 1em">
 		<p>
 			<span style="font-weight: bold">Id: </span> <span th:text="*{id}">1</span>
 		</p>
 		<p>
-			<span style="font-weight: bold">Descripción: </span> <span
-				th:text="*{descripcion}">Sésamo</span>
+			<span style="font-weight: bold">Nombre: </span> <span
+				th:text="*{nombre}">Kentucky</span>
 		</p>
 		<p>
-			<span style="font-weight: bold">Gluten: </span> <span
-				th:text="*{gluten}">Sí</span>
+			<span style="font-weight: bold">Pan: </span> <span
+				th:text="*{pan.descripcion}">Chapata</span>
+		</p>
+		<p>
+			<span style="font-weight: bold">Precio: </span> <span
+				th:text="*{#numbers.formatCurrency(precio)}">3.00</span>
 		</p>
 	</div>
 
 	<div style="margin: 1em">
 		<p style="color: red;">¿Está seguro de borrar el objeto?</p>
 		[ <a th:href="@{..}">No</a> | <a
-			th:href="@{/pan/borrar-definitivamente/{id}(id=${pan.id})}">Sí</a> ]
+			th:href="@{/hamburguesa/borrar-definitivamente/{id}(id=${hamburguesa.id})}">Sí</a>
+		]
 	</div>
 </body>
 </html>
