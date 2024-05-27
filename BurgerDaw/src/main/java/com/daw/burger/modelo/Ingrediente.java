@@ -2,52 +2,61 @@ package com.daw.burger.modelo;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+
+@Entity
 public class Ingrediente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "INGREDIENTE_SEQ")
+	@SequenceGenerator(name = "INGREDIENTE_SEQ", allocationSize = 1)
 	private Long id;
-	private String nombre;
-	private boolean lactosa;
+	private String descripcion;
+	private double peso;
 
 	public Ingrediente() {
 	}
 
-	public Ingrediente(Long id, String nombre, boolean lactosa) {
+	public Ingrediente(Long id, String nombre, double peso) {
 		this.id = id;
-		this.nombre = nombre;
-		this.lactosa = lactosa;
+		this.descripcion = nombre;
+		this.peso = peso;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public boolean isLactosa() {
-		return lactosa;
+	public double getPeso() {
+		return peso;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setDescripcion(String nombre) {
+		this.descripcion = nombre;
 	}
 
-	public void setLactosa(boolean lactosa) {
-		this.lactosa = lactosa;
+	public void setPeso(double peso) {
+		this.peso = peso;
 	}
 
 	@Override
 	public String toString() {
-		return "Pan [id=" + id + ", nombre=" + nombre + ", lactosa=" + lactosa + "]";
+		return "Pan [id=" + id + ", descripcion=" + descripcion + ", peso=" + peso + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		//return Objects.hash(nombre, lactosa, id);
 		return Objects.hash(id);
 	}
 
@@ -60,8 +69,7 @@ public class Ingrediente {
 		if (getClass() != obj.getClass())
 			return false;
 		Ingrediente other = (Ingrediente) obj;
-		// return Objects.equals(nombre, other.nombre) &&
-		// lactosa == other.lactosa && id == other.id;
+
 		return id == other.id;
 	}
 }

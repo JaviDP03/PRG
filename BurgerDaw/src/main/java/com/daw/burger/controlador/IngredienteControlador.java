@@ -17,18 +17,18 @@ import com.daw.burger.servicio.IngredienteServicio;
 @RequestMapping("/ingrediente")
 public class IngredienteControlador {
 	@Autowired
-	private IngredienteServicio IngredienteService;
+	private IngredienteServicio ingredienteService;
 
 	@GetMapping("/")
 	public String listarIngredientes(Model modelo) {
-		modelo.addAttribute("listaIngredientes", IngredienteService.getAll());
+		modelo.addAttribute("listaIngredientes", ingredienteService.getAll());
 		
 		return "ingrediente/listar";
 	}
 
 	@GetMapping("/{id}")
 	public String verIngrediente(@PathVariable(name = "id") Long id, Model modelo, RedirectAttributes redirAttrs) {
-		Ingrediente item = IngredienteService.getById(id);
+		Ingrediente item = ingredienteService.getById(id);
 
 		if (item == null) {
 			redirAttrs.addFlashAttribute("error", true);
@@ -43,21 +43,21 @@ public class IngredienteControlador {
 
 	@GetMapping("/borrar/{id}")
 	public String borrarIngrediente(@PathVariable(name = "id") Long id, Model modelo) {
-		modelo.addAttribute("ingrediente", IngredienteService.getById(id));
+		modelo.addAttribute("ingrediente", ingredienteService.getById(id));
 
 		return "ingrediente/borrar";
 	}
 
 	@GetMapping("/borrar-definitivamente/{id}")
 	public String borrarDefinitivamenteIngrediente(@PathVariable(name = "id") Long id) {
-		IngredienteService.deleteById(id);
+		ingredienteService.deleteById(id);
 
 		return "redirect:..";
 	}
 
 	@GetMapping("/editar/{id}")
 	public String editarIngrediente(@PathVariable(name = "id") Long id, Model modelo) {
-		Ingrediente item = IngredienteService.getById(id);
+		Ingrediente item = ingredienteService.getById(id);
 
 		modelo.addAttribute("ingrediente", item);
 
@@ -65,9 +65,9 @@ public class IngredienteControlador {
 	}
 
 	@PostMapping("/editar/enviar")
-	public String guardarIngrediente(@ModelAttribute("ingrediente") Ingrediente Ingrediente, Model modelo) {
+	public String guardarIngrediente(@ModelAttribute("ingrediente") Ingrediente Ingrediente) {
 
-		IngredienteService.update(Ingrediente);
+		ingredienteService.update(Ingrediente);
 
 		return "redirect:..";
 	}
@@ -77,8 +77,8 @@ public class IngredienteControlador {
 		Ingrediente item = new Ingrediente();
 
 		// Aquí puedo poner algunos valores por defecto al crear un nuevo Ingrediente
-		item.setNombre("Escriba aquí la descripción");
-		item.setLactosa(true);
+		item.setDescripcion("Escriba aquí la descripción");
+		item.setPeso(1.10);
 
 		modelo.addAttribute("ingrediente", item);
 
@@ -86,8 +86,8 @@ public class IngredienteControlador {
 	}
 
 	@PostMapping("/nuevo/enviar")
-	public String guardarNuevoIngrediente(@ModelAttribute("ingrediente") Ingrediente Ingrediente, Model modelo) {
-		IngredienteService.create(Ingrediente);
+	public String guardarNuevoIngrediente(@ModelAttribute("ingrediente") Ingrediente Ingrediente) {
+		ingredienteService.create(Ingrediente);
 
 		return "redirect:..";
 	}

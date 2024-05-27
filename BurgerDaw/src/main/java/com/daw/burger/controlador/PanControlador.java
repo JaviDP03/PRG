@@ -22,6 +22,7 @@ public class PanControlador {
 	@GetMapping("/")
 	public String listarPanes(Model modelo) {
 		modelo.addAttribute("listaPanes", panService.getAll());
+		
 		return "pan/listar";
 	}
 
