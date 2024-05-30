@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:replace="~{base :: titulo}">Titulo</title>
+</head>
+<body>
+	<div th:replace="~{base :: encabezado}">Encabezado</div>
+	<nav th:replace="~{base :: menu}">Menu</nav>
+	<h2>Alumnos</h2>
+	<div id="toggle" th:if="${error}"
+		style="background-color: pink; border: 1px solid red; margin: 1em">
+		<span th:text="${mensaje}">Se ha producido un error.</span> <a
+			href="#"
+			onclick="document.getElementById('toggle').style.display = 'none';">
+			[Cerrar] </a>
+	</div>
+	<p>
+		<a th:href="@{nuevo/item}">Nuevo</a>
+	</p>
+	<ul>
+		<li th:each="alumno : ${listaAlumnos}" th:object="${alumno}"><a
+			th:href="@{editar/{id}(id=*{id})}"><span th:text="*{nombre}">Pepe</span>&nbsp;<span
+				th:text="*{apellidos}"></span></a></li>
+	</ul>
+
+	<div style="margin: 1em">
+		<a th:href="@{..}">Regresar</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:replace="~{base :: titulo}">Título</title>
+</head>
+<body>
+	<div th:replace="~{base :: encabezado}">Encabezado</div>
+
+	<nav th:replace="~{base :: menu}">Menu</nav>
+
+	<h2>Profesores</h2>
+
+	<table style="background: black; border-spacing: 1px">
+		<thead style="background: lightgray">
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Especialidad</th>
+				<th>Clases</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody style="background: white">
+			<tr th:each="profesor : ${listaProfesores}" th:object="${profesor}">
+				<td th:text="*{id}">1</td>
+				<td th:text="*{nombre}">Pepe</td>
+				<td th:text="*{apellidos}">López</td>
+				<td th:text="*{#strings.toUpperCase(especialidad)}">Conducir</td>
+				<td><a th:href="@{clases/{id}(id=*{id})}" th:text="*{numeroClases}">10</a></td>
+				<td><a th:href="@{borrar-definitivamente/{id}(id=*{id})}">Borrar</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div style="margin: 1em">
+		<a th:href="@{..}">Regresar</a>
+	</div>
+</body>
+</html>

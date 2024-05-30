@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:replace="~{base :: titulo}">Titulo</title>
+</head>
+<body>
+	<div th:replace="~{base :: encabezado}">Encabezado</div>
+	<nav th:replace="~{base :: menu}">Menu</nav>
+	<h2>
+		Alumnos | <span th:text="${alumno.id} ? 'Editar' : 'Nuevo'">Editar</span>
+	</h2>
+	<div id="toggle" th:if="${error}"
+		style="background-color: pink; border: 1px solid red; margin: 1em">
+		<span th:text="${mensaje}">Se ha producido un error.</span> <a
+			href="#"
+			onclick="document.getElementById('toggle').style.display = 'none';">
+			[Cerrar] </a>
+	</div>
+
+	<form th:action="@{enviar}" th:object="${alumno}" method="post"
+		style="border: 1px solid black; padding: 1em">
+
+		<input th:field="*{id}" id="id" type="hidden" />
+
+		<p>
+			<label for="nombre" style="font-weight: bold">Nombre: </label> <input
+				th:field="*{nombre}" id="nombre" type="text" />
+		</p>
+
+		<p>
+			<label for="apellidos" style="font-weight: bold">Apellidos: </label>
+			<input th:field="*{apellidos}" id="apellidos" type="text" />
+		</p>
+		<p>
+			<label for="turno" style="font-weight: bold">Turno: </label> <select
+				th:field="*{turno}" id="turno">
+				<option value="-1">---</option>
+				<option th:each="turno : ${listaTurnos}" th:value="${turno}"
+					th:text="${turno}">MAÑANA</option>
+			</select>
+		</p>
+
+		<button type="submit">Aceptar</button>
+	</form>
+
+	<div style="margin: 1em">
+		<a th:href="@{..}">Regresar</a>
+	</div>
+</body>
+</html>

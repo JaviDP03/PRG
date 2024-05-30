@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:fragment="titulo">Autoescuela On-line</title>
+</head>
+<body>
+  <div th:fragment="encabezado">
+    <h1 style="text-align: center">Autoescuela on-line</h1>
+  </div>
+ 
+  <nav th:fragment="menu">
+    <ul style="list-style-type: none; display:flex; gap:1em; background: lightgray">
+      <li><a href="/">Inicio</a>&nbsp;&nbsp;</li>
+      <li><a href="/alumno/">Alumnos</a>&nbsp;&nbsp;</li>
+      <li><a href="/profesor/">Profesores</a>&nbsp;&nbsp;</li>
+    </ul>
+  </nav>
+
+  <h2>Inicio</h2>
+  ¡Bienvenido/a a Autoescuela on-line!
+</body>
+</html>
