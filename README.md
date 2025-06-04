@@ -1,6 +1,7 @@
 # Programación
 
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-3.9.6-red?logo=apachemaven)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.3.0-6DB33F?logo=springboot)
 ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3-blueviolet?logo=thymeleaf)
 
