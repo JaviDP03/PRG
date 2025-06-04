@@ -1,5 +1,6 @@
-# Programación&emsp;![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk&logoColor=white)
+# Programación
 
+![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk&logoColor=white)
 
 Este repositorio contiene el material de la asignatura de Programación de 1ºDAW. Se usó Java como lenguaje.
 
