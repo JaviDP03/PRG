@@ -1,6 +1,8 @@
 # Programación
 
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.3.0-6DB33F?logo=springboot)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3-blueviolet?logo=thymeleaf)
 
 Este repositorio contiene el material de la asignatura de Programación de 1ºDAW. Se usó Java como lenguaje.
 
