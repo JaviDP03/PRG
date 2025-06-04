@@ -7,7 +7,7 @@
 
 Este repositorio contiene el material de la asignatura de Programación de 1ºDAW. Se usó **Java** como lenguaje.
 
-## Estructura del repositorio
+## 📁 Estructura del repositorio
 
 - **Tema1**: Conceptos básicos de programación.
 - **Tema2**: Estructuras de control y condicionales.
